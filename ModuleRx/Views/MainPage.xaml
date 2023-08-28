@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ModuleRx.Views.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Rx Module" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Grid RowDefinitions="*, 48" ColumnDefinitions="*">
+            <ScrollView  Grid.Row="0" Grid.Column="0">
+                <ListView x:Name="InfoListView" SeparatorVisibility="None" ItemsSource="{Binding InfosCollection}" IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="5">
+                                    <Label Text="{Binding Title}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <Button Clicked="OnAddInfo"
+                        Text="Add Info"
+                        BorderColor="#C96EE3"
+                        BorderWidth="1"
+                        BackgroundColor="#61007D"/>
+            </StackLayout>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>

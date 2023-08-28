@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:modelsView="clr-namespace:ModuleRx.Models_View;assembly=ModuleRx"
+             x:Class="ModuleRx.Views.AddInfoPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add an Info"
+                     Order="Primary"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <modelsView:InfoViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Margin="10" Placeholder="Insert a title" Text="{Binding Title}"/>
+            <Entry Margin="10" Placeholder="Insert a text" Text="{Binding Body}"/>
+            <Button Margin="20" Text="Save new Info" Clicked="Button_OnSave"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
